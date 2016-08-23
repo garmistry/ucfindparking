@@ -1,0 +1,19 @@
+{
+  "name": "parkingdatamining",
+  "version": "1.0.0",
+  "description": "Surveying UCF Parking rates to determine different statistical reasonings ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smistry1121/ucfindparking.git"
+  },
+  "author": "Sagar Mistry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smistry1121/ucfindparking/issues"
+  },
+  "homepage": "https://github.com/smistry1121/ucfindparking#readme"
+}
