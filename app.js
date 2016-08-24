@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const data = require('./models/entry.js');
 
-var db = mongoose.createConnection('mongodb://garfishDB:mistryDB@ec2-54-163-104-129.compute-1.amazonaws.com:27017/parkingData');
+var db = mongoose.createConnection('mongodb://garfishParking:mistryParking@ec2-54-163-104-129.compute-1.amazonaws.com:27017/parkingData');
 
 db.on('error', function () {
   console.log('Error! Database connection failed.');
@@ -30,7 +30,7 @@ function runtest(){
 
 			var entry = new data({
 				garageID : i,
-				capacity : size, 
+				capacity : eval(size), 
 				dateMonth: date[0], 
 				dateDay: date[1], 
 				dateYear: date[2],
@@ -38,14 +38,15 @@ function runtest(){
 				minute: time[1],
 				second: time[2]	
 			});
-			entry.save(function(err){
-				if(err){
-					console.log('err '+ err);
-				}
-				else{
-					console.log('pushed ' +  i );
-				}
-			});
+
+			// entry.save(function(err){
+			// 	if(err){
+			// 		console.log('err '+ err);
+			// 	}
+			// 	else{
+			// 		console.log('pushed ' +  i );
+			// 	}
+			// });
 		});
 	});	
 }
