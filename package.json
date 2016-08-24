@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/smistry1121/ucfindparking/issues"
   },
-  "homepage": "https://github.com/smistry1121/ucfindparking#readme"
+  "homepage": "https://github.com/smistry1121/ucfindparking#readme",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "mongoose": "^4.5.10",
+    "request": "^2.74.0"
+  }
 }
