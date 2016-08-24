@@ -30,15 +30,14 @@ function runtest(){
 				minute: time[1],
 				second: time[2]	
 			});
-			console.log(entry.capacity);
-			// entry.save(function(err){
-			// 	if(err){
-			// 		console.log('err '+ err);
-			// 	}
-			// 	else{
-			// 		console.log('pushed');
-			// 	}
-			// });
+			entry.save(function(err){
+				if(err){
+					console.log('err '+ err);
+				}
+				else{
+					console.log('pushed + ' i );
+				}
+			});
 		});
 	});	
 }
