@@ -30,20 +30,20 @@ function runtest(){
 				minute: time[1],
 				second: time[2]	
 			});
-
-			entry.save(function(err){
-				if(err){
-					console.log('err '+ err);
-				}
-				else{
-					console.log('pushed');
-				}
-			});
+			console.log(entry.capacity);
+			// entry.save(function(err){
+			// 	if(err){
+			// 		console.log('err '+ err);
+			// 	}
+			// 	else{
+			// 		console.log('pushed');
+			// 	}
+			// });
 		});
 	});	
 }
 
-setInterval(runtest, 2*1000);
+setInterval(runtest, 5*1000);
 
 
 function getDate() {
