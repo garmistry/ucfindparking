@@ -13,7 +13,7 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
  	console.log("we're live with mongo");
- 	setInterval(runtest, 5*1000);
+ 	setInterval(runtest, 60*1000);
 });
 
 function runtest(){
