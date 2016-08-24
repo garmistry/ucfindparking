@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const data = require('./models/entry.js');
 
-mongoose.connect('mongodb://root:36rzkhLRgfQJ@localhost/parking');
+mongoose.connect('mongodb://root:36rzkhLRgfQJ@/opt/bitnami/mongodb/tmp/mongodb-27017.sock/parking');
 
 function runtest(){
 	request("http://secure.parking.ucf.edu/GarageCount/" , function(err, res, body){
