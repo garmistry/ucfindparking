@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const data = require('./models/entry.js');
 
-var db = mongoose.createConnection('mongodb://root:36rzkhLRgfQJ@/opt/bitnami/mongodb/tmp/mongodb-27017.sock/parking');
+var db = mongoose.createConnection('mongodb://garfishDB:mistryDB@ec2-54-163-104-129.compute-1.amazonaws.com:27017/parkingData');
 
 
 
