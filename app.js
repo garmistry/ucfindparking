@@ -6,7 +6,12 @@ const data = require('./models/entry.js');
 
 var db = mongoose.createConnection('mongodb://garfishDB:mistryDB@ec2-54-163-104-129.compute-1.amazonaws.com:27017/parkingData');
 
+db.on('error', function () {
+  console.log('Error! Database connection failed.');
+});
 
+db.once('open', function (argument) {
+  console.log('Database connection established!');
 
 function runtest(){
 	request("http://secure.parking.ucf.edu/GarageCount/" , function(err, res, body){
