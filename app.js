@@ -12,6 +12,7 @@ db.on('error', function () {
 
 db.once('open', function (argument) {
   console.log('Database connection established!');
+});
 
 function runtest(){
 	request("http://secure.parking.ucf.edu/GarageCount/" , function(err, res, body){
@@ -82,5 +83,4 @@ function getTime(){
 
     var timeArray = [hour,min,sec]
     return timeArray;
-
 }
