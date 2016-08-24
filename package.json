@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/smistry1121/ucfindparking#readme",
   "dependencies": {
+    "bluebird": "^3.4.1",
     "cheerio": "^0.22.0",
     "mongoose": "^4.5.10",
     "request": "^2.74.0"

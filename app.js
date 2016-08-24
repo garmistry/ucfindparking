@@ -1,17 +1,19 @@
 const request = require('request'); 
 const cheerio = require('cheerio');
 const mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
+
 
 const data = require('./models/entry.js');
 
-var db = mongoose.createConnection('mongodb://garfishParking:mistryParking@ec2-54-163-104-129.compute-1.amazonaws.com:27017/parkingData');
+mongoose.connect('mongodb://garfishParking:mistryParking@ec2-54-163-104-129.compute-1.amazonaws.com:27017/parkingData');
+//mongoose.connect('mongodb://localhost/parking');
 
-db.on('error', function () {
-  console.log('Error! Database connection failed.');
-});
-
-db.once('open', function (argument) {
-  console.log('Database connection established!');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+ 	console.log("we're live with mongo");
+ 	setInterval(runtest, 5*1000);
 });
 
 function runtest(){
@@ -38,20 +40,18 @@ function runtest(){
 				minute: time[1],
 				second: time[2]	
 			});
-
-			// entry.save(function(err){
-			// 	if(err){
-			// 		console.log('err '+ err);
-			// 	}
-			// 	else{
-			// 		console.log('pushed ' +  i );
-			// 	}
-			// });
+			entry.save(function(err,entry){
+				if(err){
+					console.log('err '+ err);
+				}
+				console.log(entry.capacity);
+				
+			});
 		});
 	});	
 }
 
-setInterval(runtest, 5*1000);
+
 
 
 function getDate() {
